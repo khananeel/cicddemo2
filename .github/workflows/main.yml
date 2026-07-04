@@ -11,6 +11,7 @@ jobs:
           ls -ltra
   test:
     runs-on: ubuntu-22.04
+    needs: build
     steps:
       - name: build step
         run: |
@@ -18,6 +19,7 @@ jobs:
           date
   deploy:
     runs-on: ubuntu-22.04
+    needs: test
     steps:
       - name: test step
         run: |
