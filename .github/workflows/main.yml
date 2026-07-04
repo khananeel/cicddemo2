@@ -5,4 +5,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Hello Step
-        run: echo "Hello to Git Hub actions"
+        run: |
+          echo "Hello to Git Hub actions"
+          docker ps
+          ls -ltra
