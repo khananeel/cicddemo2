@@ -1,7 +1,7 @@
 name: hello world workflow
 on: workflow_dispatch
 jobs:
-  hello:
+  build:
     runs-on: ubuntu-22.04
     steps:
       - name: Hello Step
@@ -9,3 +9,18 @@ jobs:
           echo "Hello to Git Hub actions"
           docker ps
           ls -ltra
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: build step
+        run: |
+          echo "building job"
+          date
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: test step
+        run: |
+          echo "test job"
+          df -h
+    
